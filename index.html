@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Notes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Sticky Notes App</title>
 </head>
 <body>
-    
+  <div id="app">
+    <div id="stickies-container"></div>
+    <div id="createsticky">
+      <input type="text" id="stickytitle" placeholder="Title">
+      <textarea id="stickytext" placeholder="Note"></textarea>
+      <button id="create">Create Sticky Note</button>
+    </div>
+  </div>
+  <script src="vista.js"></script>
 </body>
 </html>
+
