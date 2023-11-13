@@ -1,4 +1,3 @@
-// vista.js
 class StickyNoteView {
     constructor(model) {
         this.model = model;
@@ -6,8 +5,10 @@ class StickyNoteView {
         this.initSticky();
     }
 
+    // crear nota
     createStickyElement() {
         const newSticky = document.createElement("div");
+        const formattedDate = this.formatDate(this.model.creationDate);
         newSticky.classList.add("sticky", "draggable", "editable");
 
         // Posición inicial de las notas
@@ -15,12 +16,21 @@ class StickyNoteView {
         newSticky.style.top = "50px";
 
         newSticky.innerHTML = `
-          <h3 contenteditable="true">${this.model.title}</h3>
-          <p contenteditable="true">${this.model.text}</p>
-          <span class="deletesticky">&times;</span>
-      `;
+            <h3 contenteditable="true">${this.model.title}</h3>
+            <p contenteditable="true">${this.model.text}</p>
+            <p class="creation-date">${formattedDate}</p>
+            <span class="deletesticky">&times;</span>
+        `;
         return newSticky;
     }
+
+    // da formato a la fecha y hora
+    formatDate(date) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        return date.toLocaleDateString('es-ES', options);
+    }
+
+
 
     // acciones que se pueden hacer después de instanciar la nota
     initSticky() {
