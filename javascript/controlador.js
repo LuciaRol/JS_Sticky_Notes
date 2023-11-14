@@ -5,6 +5,8 @@ window.onload = () => {
     const stickyTitleInput = document.getElementById("stickytitle");
     const stickyTextInput = document.getElementById("stickytext");
 
+
+
     // al hacer click se crea una nota y se puede rellenar
     createStickyButton.addEventListener("click", () => {
         const title = stickyTitleInput.value;
@@ -21,6 +23,8 @@ window.onload = () => {
 
         stickyContainer.appendChild(stickyView.element);
 
+
+        // limpia los campos
         stickyTitleInput.value = "";
         stickyTextInput.value = "";
     });

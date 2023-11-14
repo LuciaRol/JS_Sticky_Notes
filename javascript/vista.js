@@ -7,7 +7,7 @@ class StickyNoteView {
 
     // crear nota
     createStickyElement() {
-        const newSticky = document.createElement("div");
+        var newSticky = document.createElement("div");
         const formattedDate = this.formatDate(this.model.creationDate);
         newSticky.classList.add("sticky", "draggable", "editable");
 
@@ -19,14 +19,13 @@ class StickyNoteView {
             <h3 contenteditable="true">${this.model.title}</h3>
             <p contenteditable="true">${this.model.text}</p>
             <p class="creation-date">${formattedDate}</p>
-            <span class="deletesticky">&times;</span>
-        `;
+            <span class="deletesticky">&times;</span>`;
         return newSticky;
     }
 
     // da formato a la fecha y hora
     formatDate(date) {
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
         return date.toLocaleDateString('es-ES', options);
     }
 

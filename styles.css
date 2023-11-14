@@ -20,14 +20,27 @@ body {
 #stickies-container {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .sticky {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  margin: 10px;
-  padding: 10px;
-  position: relative;
+	width:250px;
+  height:240px;
+  position:relative;
+  background:#ffa;
+  overflow:hidden;
+  margin:30px auto;
+  padding:20px;
+  border-color: 2px solid #000;
+  border-radius:0 0 0 30px/45px;
+  box-shadow:
+    inset 0 -40px 40px rgba(0,0,0,0.2),
+    inset 0 25px 10px rgba(0,0,0,0.2),
+    0 5px 6px 5px rgba(0,0,0,0.2);
+  font-family: 'Permanent Marker', cursive;
+  line-height:1.7em;
+  font-size:19px;
+  color:#130d6b;
 }
 
 .deletesticky {

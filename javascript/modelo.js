@@ -5,5 +5,13 @@ class StickyNoteModel {
         this.text = text;
         this.creationDate = new Date();
     }
+
+    toJSON() {
+        return {
+            title: this.title,
+            text: this.text,
+            creationDate: this.creationDate.toJSON()
+        };
+    }
 }
 
