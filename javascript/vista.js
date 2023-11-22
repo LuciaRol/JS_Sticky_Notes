@@ -25,11 +25,15 @@ class StickyNoteView {
 
     // da formato a la fecha y hora
     formatDate(date) {
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
-        return date.toLocaleDateString('es-ES', options);
+        const options = {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+        };
+        return date.toLocaleDateString("es-ES", options);
     }
-
-
 
     // acciones que se pueden hacer después de instanciar la nota
     initSticky() {
@@ -39,7 +43,8 @@ class StickyNoteView {
     }
 
     // arrastra la nota al clicar con el botón del ratón
-    makeStickyDraggable() {
+
+     makeStickyDraggable() {
         let isDragging = false;
         let offsetX, offsetY;
 
@@ -63,6 +68,24 @@ class StickyNoteView {
             isDragging = false;
         });
     }
+
+    /* makeStickyDraggable() {
+        let isDragging = false;
+        const note = document.getElementsByClassName("sticky");
+
+        note.addEventListener("click", () => {
+            isDragging = !isDragging;
+        });
+
+        document.addEventListener("mousemove", (event) => {
+            if (isDragging) {
+                note.style.left = event.clientX - 20 + "px";
+                note.style.top = event.clientY - 20 + "px";
+            }
+
+            console.log(event.screenX + event.screenY);
+        });
+    } */
 
     // edita la nota pinchando en el contenido
     makeStickyEditable() {

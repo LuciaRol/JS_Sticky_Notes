@@ -1,3 +1,7 @@
+var dataModel = {
+    "stickyNotes": []
+}
+
 // clase para el modelo de la nota: contiene un título, el texto y momento de creación
 class StickyNoteModel {
     constructor(title, text) {
